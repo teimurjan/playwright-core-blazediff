@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/client/fileUtils.ts"],
+  "sourcesContent": ["/**\n * Copyright (c) Microsoft Corporation.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\nimport type { Platform } from './platform';\n\n// Keep in sync with the server.\nexport const fileUploadSizeLimit = 50 * 1024 * 1024;\n\nexport async function mkdirIfNeeded(platform: Platform, filePath: string) {\n  // This will harmlessly throw on windows if the dirname is the root directory.\n  await platform.fs().promises.mkdir(platform.path().dirname(filePath), { recursive: true }).catch(() => {});\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAmBO,MAAM,sBAAsB,KAAK,OAAO;AAE/C,eAAsB,cAAc,UAAoB,UAAkB;AAExE,QAAM,SAAS,GAAG,EAAE,SAAS,MAAM,SAAS,KAAK,EAAE,QAAQ,QAAQ,GAAG,EAAE,WAAW,KAAK,CAAC,EAAE,MAAM,MAAM;AAAA,EAAC,CAAC;AAC3G;",
+  "names": []
+}

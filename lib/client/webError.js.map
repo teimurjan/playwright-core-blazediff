@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/client/webError.ts"],
+  "sourcesContent": ["/**\n * Copyright (c) Microsoft Corporation.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\nimport type { Page } from './page';\nimport type * as api from '../../types/types';\n\nexport class WebError implements api.WebError {\n  private _page: Page | null;\n  private _error: Error;\n\n  constructor(page: Page | null, error: Error) {\n    this._page = page;\n    this._error = error;\n  }\n\n  page() {\n    return this._page;\n  }\n\n  error() {\n    return this._error;\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAmBO,MAAM,SAAiC;AAAA,EAI5C,YAAY,MAAmB,OAAc;AAC3C,SAAK,QAAQ;AACb,SAAK,SAAS;AAAA,EAChB;AAAA,EAEA,OAAO;AACL,WAAO,KAAK;AAAA,EACd;AAAA,EAEA,QAAQ;AACN,WAAO,KAAK;AAAA,EACd;AACF;",
+  "names": []
+}

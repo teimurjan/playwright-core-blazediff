@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/utils/isomorphic/rtti.ts"],
+  "sourcesContent": ["/**\n * Copyright (c) Microsoft Corporation.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\nexport { isString } from  './stringUtils';\n\nexport function isRegExp(obj: any): obj is RegExp {\n  return obj instanceof RegExp || Object.prototype.toString.call(obj) === '[object RegExp]';\n}\n\nexport function isObject(obj: any): obj is NonNullable<object> {\n  return typeof obj === 'object' && obj !== null;\n}\n\nexport function isError(obj: any): obj is Error {\n  return obj instanceof Error || (obj && Object.getPrototypeOf(obj)?.name === 'Error');\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAgBA,yBAA0B;AAEnB,SAAS,SAAS,KAAyB;AAChD,SAAO,eAAe,UAAU,OAAO,UAAU,SAAS,KAAK,GAAG,MAAM;AAC1E;AAEO,SAAS,SAAS,KAAsC;AAC7D,SAAO,OAAO,QAAQ,YAAY,QAAQ;AAC5C;AAEO,SAAS,QAAQ,KAAwB;AAC9C,SAAO,eAAe,SAAU,OAAO,OAAO,eAAe,GAAG,GAAG,SAAS;AAC9E;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/client/jsonPipe.ts"],
+  "sourcesContent": ["/**\n * Copyright (c) Microsoft Corporation.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n * http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\nimport { ChannelOwner } from './channelOwner';\n\nimport type * as channels from '@protocol/channels';\n\nexport class JsonPipe extends ChannelOwner<channels.JsonPipeChannel> {\n  static from(jsonPipe: channels.JsonPipeChannel): JsonPipe {\n    return (jsonPipe as any)._object;\n  }\n\n  constructor(parent: ChannelOwner, type: string, guid: string, initializer: channels.JsonPipeInitializer) {\n    super(parent, type, guid, initializer);\n  }\n\n  channel() {\n    return this._channel;\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAgBA,0BAA6B;AAItB,MAAM,iBAAiB,iCAAuC;AAAA,EACnE,OAAO,KAAK,UAA8C;AACxD,WAAQ,SAAiB;AAAA,EAC3B;AAAA,EAEA,YAAY,QAAsB,MAAc,MAAc,aAA2C;AACvG,UAAM,QAAQ,MAAM,MAAM,WAAW;AAAA,EACvC;AAAA,EAEA,UAAU;AACR,WAAO,KAAK;AAAA,EACd;AACF;",
+  "names": []
+}
